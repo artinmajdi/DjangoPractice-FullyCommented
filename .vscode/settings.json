@@ -1,0 +1,6 @@
+{
+    "python.linting.pylintEnabled": false,
+    "python.linting.enabled": true,
+    "python.pythonPath": "/Users/artinmac/.conda/envs/env_django/bin/python",
+    "python.linting.mypyEnabled": true
+}
