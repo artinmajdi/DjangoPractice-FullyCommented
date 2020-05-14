@@ -25,13 +25,13 @@ SECRET_KEY = 'l$!yw^t+v5jft)h&a%x%5(8$058=@h)yrp&7ns1-)wjss#w5$w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list = []
 
 
 # Application definition
 
-""" In order for Django to keep track of your application and be able to create 
-    database tables for its models, you have to activate it. To do this, edit the 
+""" In order for Django to keep track of your application and be able to create
+    database tables for its models, you have to activate it. To do this, edit the
     settings.py file and add blog.apps.BlogConfig to the INSTALLED_APPS setting. """
 
 INSTALLED_APPS = [
@@ -126,4 +126,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
