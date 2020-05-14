@@ -4,6 +4,7 @@ import os
 import sys
 
 
+""" Test publishign feature """
 
 """ Activate the environment by coppying the command below in terminal """
     # source /Users/artinmac/GoogleDrive/RESEARCH/Learning/CodePractice/Django/envPy_django/bin/activate
