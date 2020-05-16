@@ -26,14 +26,17 @@ def post_list(request):
 def post_detail(request, year, month, day, post):
 
     """
-        -   This is similar to object retreival that I wrote helps in manage.py only       If it can't find the object with specified parameters, it returns a HTTP        404 (not found) exception
+        -   This is similar to object retreival that I wrote helps in manage.py only        If it can't find the object with specified parameters, it returns a HTTP        404 (not found) exception
+
         -   We filter it by date, because in our models.py, we set the slug to be
             unique_by_date=publish, so that we would only have 1 post per date for     each slug
     """
+
     post = get_object_or_404(Post,
                              slug=post,
                              status='published',
                              publish__year=year,
                              publish__month=month,
                              publish__day=day)
+
     return render(request,'blog/post/detail.html', {'post':post})
