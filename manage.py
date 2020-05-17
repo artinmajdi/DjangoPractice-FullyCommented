@@ -3,10 +3,9 @@
 import os
 import sys
 
+""" Test publishing feature """
 
-""" Test publishign feature """
-
-""" Activate the environment by coppying the command below in terminal
+""" Activate the environment by copying the command below in terminal
     source /Users/artinmac/GoogleDrive/RESEARCH/Learning/CodePractice/Django/envPy_django/bin/activate """
 
 """ After I created my app models and added them to the settings->INSTALLED_APPS,
@@ -69,7 +68,7 @@ import sys
                 >> from .models import <model-name-inside-app> (e.g. Post)
                 >> admin.site.register( <model-name-inside-app> )
 
-    Interacting with the Databse
+    Interacting with the Database
         In terminal call:
             $ python manage.py shell
         Then run these to save a new post:
@@ -90,16 +89,16 @@ import sys
                 >>> post.title = 'New title'
                 >>> post.save()
 
-            Retreiving objects
+            Retrieving objects
                 See All Objects:
                     >>> User.objects.all()
                     >>> Post.objects.all()
 
-                Filter: filteing a QuerySet to only show what we are looking for
+                Filter: filtering a QuerySet to only show what we are looking for
                     Note: I need to use 2 underscore for search-fields
                     >>> Post.objects.filter(publish__year=2020, author__username='artinmac')
 
-                Exclude: e.g. retireving all posts in 2020 whos title don't start with 'Another'
+                Exclude: e.g. retrieving all posts in 2020 which their title don't start with 'Another'
                     >> Post.objects.filter(publish__year=2020).exclude(title__startswith='Another')
 
                 Order:
@@ -114,7 +113,6 @@ import sys
 
             Doing the Post Creation & Saving to Database in oneshot
             >>> Post.objects.create(title='Another post', slug='another-post', body='Post body.',author=user)
-
 
 
     Customizing the way that models are displayed:

@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'coreProject.blog.apps.BlogConfig',
+    # 'coreProject.customers.apps.CustomersCompanyInfoConfig',
     'coreProject.blog',
-    'coreProject.customers_company_info',
+    'coreProject.customers',
 
 ]
 
@@ -98,6 +99,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {'min_length':1,}
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',

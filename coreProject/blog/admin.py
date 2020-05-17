@@ -6,22 +6,22 @@ from .models import Post
     include information about how to display the model in the site and how to interact
     with it """
 
-
 """ The @admin.register(Post) decorator performs the same function as the admin.site.register(Post, PostAdmin),
     registering the ModelAdmin class that it decorates.
 
         @admin.register(Post)   <- equivalent ->   admin.site.register(Post, PostAdmin)  """
 
+
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     """ columns of information showing in front of each post """
-    list_display = ('title','slug','author','publish','status')
+    list_display = ('title', 'slug', 'author', 'publish', 'status')
 
     """ list of filters that we can filter all posts on the right hand side of the page """
-    list_filter = ('status','created','publish','author')
+    list_filter = ('status', 'created', 'publish', 'author')
 
     """ items that it'll look into when user searches something inside the Post page """
-    search_fields = ('title','body')
+    search_fields = ('title', 'body')
 
     """ when I click on New Post, by while entering something for the 'title', it will automaticcalt autofill 'slug' with that text """
     prepopulated_fields = {'slug': ('title',)}
@@ -33,7 +33,7 @@ class PostAdmin(admin.ModelAdmin):
     date_hierarchy = 'publish'
 
     """ this says how to sort all of the blog posts in ascending order startin from 'author', then 'publish', then 'status' """
-    ordering = ('author','publish','status')
+    ordering = ('author', 'publish', 'status')
 
 
 """ Continue from

@@ -5,9 +5,9 @@ from django.db import migrations, models
 import django.utils.timezone
 from django.conf import settings
 
-""" A migration specifies dependencies on other migrations and operations to perform 
+""" A migration specifies dependencies on other migrations and operations to perform
     in the database to synchronize it with model changes. """
-    
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                 ('updated', models.DateTimeField(auto_now=True)),
                 ('created', models.DateTimeField(auto_now=True)),
                 ('status', models.CharField(max_length=10, default='draft', choices=[('draft', 'Draft'), ('published', 'Published')])),
-                ('author', models.ForeignKey(related_name='blog_posts', to=settings.AUTH_USER_MODEL, on_delete=models.CASCADE)),
+                ('author', models.ForeignKey(related_name='blog_posts', to=settings.AUTH_USER_MODEL, on_delete=models.deletion.CASCADE)),
             ],
             options={
                 'ordering': ('-publish',),
